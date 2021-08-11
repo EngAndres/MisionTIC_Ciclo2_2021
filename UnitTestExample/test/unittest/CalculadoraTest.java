@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package unittest;
 
 import org.junit.After;
@@ -38,10 +43,10 @@ public class CalculadoraTest {
     @Test
     public void testSuma() {
         System.out.println("suma");
-        double num1 = 2.5;
-        double num2 = 6.1;
+        double num1 = 5.0;
+        double num2 = 7.0;
         Calculadora instance = new Calculadora();
-        double expResult = 8.6;
+        double expResult = 12.0;
         double result = instance.suma(num1, num2);
         assertEquals(expResult, result, 0.0);
     }
@@ -50,12 +55,12 @@ public class CalculadoraTest {
      * Test of resta method, of class Calculadora.
      */
     @Test
-    public void testResta() {
+    public void testSubstraction() {
         System.out.println("resta");
-        double num1 = 0.0;
-        double num2 = 0.0;
+        double num1 = -2.0;
+        double num2 = -7.0;
         Calculadora instance = new Calculadora();
-        double expResult = 0.0;
+        double expResult = 5.0;
         double result = instance.resta(num1, num2);
         assertEquals(expResult, result, 0.0);
     }
@@ -64,9 +69,9 @@ public class CalculadoraTest {
      * Test of multiplicacion method, of class Calculadora.
      */
     @Test
-    public void testMultiplicacion() {
+    public void testMultiplication() {
         System.out.println("multiplicacion");
-        double num1 = 0.0;
+        double num1 = 12.0;
         double num2 = 0.0;
         Calculadora instance = new Calculadora();
         double expResult = 0.0;
@@ -78,14 +83,37 @@ public class CalculadoraTest {
      * Test of division method, of class Calculadora.
      */
     @Test
-    public void testDivision() {
-        System.out.println("division");
-        double num1 = 4.0;
-        double num2 = 2.0;
+    public void testDivisionByNaN() {
+        System.out.println("division por NaN");
+        double num1 = 0.0;
+        double num2 = Double.NaN;
         Calculadora instance = new Calculadora();
-        double expResult = 2.0;
+        double expResult = Double.NaN;
         double result = instance.division(num1, num2);
         assertEquals(expResult, result, 0.0);
+    }
+    
+    
+    @Test
+    public void testDivisionByZero() {
+        System.out.println("division por cero");
+        double num1 = 0.0;
+        double num2 = 0.0;
+        Calculadora instance = new Calculadora();
+        double expResult = Double.NaN;
+        double result = instance.division(num1, num2);
+        assertEquals(expResult, result, 0.0);
+    }
+    
+    @Test
+    public void testDivisionNormal() {
+        System.out.println("division");
+        double num1 = 3.0;
+        double num2 = 2.0;
+        Calculadora instance = new Calculadora();
+        double expResult = 1.5;
+        double result = instance.division(num1, num2);
+        assertEquals(expResult, result, 0.1);
     }
 
     /**
@@ -96,4 +124,5 @@ public class CalculadoraTest {
         System.out.println("main");
         Calculadora.main();
     }
+    
 }
