@@ -9,3 +9,5 @@ CREATE TABLE libro_autor(
 );
 INSERT INTO libro_autor(id_libro_fk, id_autor_fk) 
 VALUES (456, 147852);
+INSERT INTO libro_autor(id_libro_fk, id_autor_fk) 
+VALUES (324, 32158);

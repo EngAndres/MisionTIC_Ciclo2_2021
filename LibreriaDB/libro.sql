@@ -11,3 +11,5 @@ INSERT INTO libro(id_ISBN, titulo, num_paginas, anio, id_editorial_fk)
 VALUES (897, 'Python', '40', '2020', 3);
 INSERT INTO libro(id_ISBN, titulo, num_paginas, anio, id_editorial_fk) 
 VALUES (456, 'Como ser un programador senior', '200', '2021', 1);
+INSERT INTO libro(id_ISBN, titulo, anio, id_editorial_fk)
+VALUES (324,'El olvido que seremos','2005',2);
